@@ -2,6 +2,12 @@ package com.company;
 
 public class Main {
 
+	public static void  printArr(int arr[]){
+		for (int value:arr) {
+			System.out.println(value);
+		}
+	}
+
     public static void main(String[] args) {
 
 //	    Binary_search bs = new Binary_search();
@@ -14,13 +20,18 @@ public class Main {
 //		System.out.println(result);
 //**************************************************************************
 		//Selection sorting
-		SelectionSort ss = new SelectionSort();
+//		SelectionSort ss = new SelectionSort();
+//		int arr[] = {1,3,2,5,4};
+//		arr = ss.selectionSorting(arr);
+//		printArr(arr);
+//**************************************************************************
+		//Insertion sorting
+		InsertionSorting is = new InsertionSorting();
 		int arr[] = {1,3,2,5,4};
-		arr = ss.selectionSorting(arr);
-		for (int value:arr) {
-			System.out.println(value);
-		}
-    }
+		arr = is.insertionSorting(arr);
+		printArr(arr);
+
+	}
 
 
 }

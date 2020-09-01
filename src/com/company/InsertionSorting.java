@@ -14,16 +14,14 @@ public class InsertionSorting {
         for(index = 1; index < arr.length; index++)
         {
             min = arr[index];
-            tempIndex = index;
             for(secondIndex = index-1; secondIndex >=0; secondIndex--)
             {
                 if(arr[secondIndex] > min)
                 {
                     temp = arr[secondIndex];
                     arr[secondIndex] = min;
-                    arr[tempIndex] = temp;
-                    tempIndex = secondIndex;
-                    min = arr[tempIndex];
+                    arr[index] = temp;
+                    min = arr[index];
                 }
             }
         }

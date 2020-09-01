@@ -26,10 +26,17 @@ public class Main {
 //		printArr(arr);
 //**************************************************************************
 		//Insertion sorting
-		InsertionSorting is = new InsertionSorting();
+//		InsertionSorting is = new InsertionSorting();
+//		int arr[] = {1,3,2,5,4};
+//		arr = is.insertionSorting(arr);
+//		printArr(arr);
+//**************************************************************************
+		//Merge sorting
+		MergeSort ms = new MergeSort();
 		int arr[] = {1,3,2,5,4};
-		arr = is.insertionSorting(arr);
+		ms.mergeSorting(arr, 0, arr.length-1);
 		printArr(arr);
+
 
 	}
 

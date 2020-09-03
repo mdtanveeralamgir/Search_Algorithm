@@ -1,60 +1,65 @@
 package com.company;
 
 public class MergeSort {
-    public void mergeSorting(int arr[], int startingIndex, int endIndex)
+    public static void mergeSorting(int arr[]){
+        mergeSorting(arr, 0, arr.length-1);
+    }
+    public static void mergeSorting(int arr[], int startingIndex, int endIndex)
     {
 //        int result[] = {};
-        if(startingIndex < endIndex){
-            int middle = (int)Math.floor((startingIndex + endIndex)/2);
+            if(endIndex <= startingIndex)
+                return;
+            int middle = (startingIndex + endIndex)/2;
             mergeSorting(arr, startingIndex, middle);
             mergeSorting(arr, middle + 1, endIndex);
             merging(arr, startingIndex, middle, endIndex);
-        }
 
     }
 
-    public void merging(int arr[], int startingIndex, int middleIndex, int endIndex)
+    public static void merging(int arr[], int startingIndex, int middleIndex, int endIndex)
     {
-        int count = startingIndex;
-        int leftStart = startingIndex;
-        int rightStart = middleIndex + 1;
-        int tempArray[] = new int [5];
-        while(leftStart <= middleIndex && rightStart <= endIndex)
-        {
-            if(arr[leftStart] < arr[rightStart])
-            {
-                tempArray[count] = arr[leftStart];
-                leftStart++;
-//                System.out.println("Start: " + startingIndex);
 
+        int tempArray[] = new int[endIndex - startingIndex + 1];
+        int leftSlot = startingIndex; //index counter for left side of the array
+        int rightSlot = middleIndex + 1; //index counter for right side of the array
+        int counter = 0; //Counter for temp array index
+        while(leftSlot <= middleIndex && rightSlot <= endIndex)
+        {
+            if(arr[leftSlot] < arr[rightSlot])
+            {
+                tempArray[counter] = arr[leftSlot];
+                leftSlot++;
             }
             else
             {
-                tempArray[count] = arr[rightStart];
-                rightStart++;
-//                System.out.println("Middle " + middleIndex);
+                tempArray[counter] = arr[rightSlot];
+                rightSlot++;
             }
-//            System.out.println("********");
-            count++;
+            counter++;
         }
-        if(leftStart <= middleIndex)
+
+        if(leftSlot <= middleIndex)
         {
-            while (leftStart <= middleIndex)
+            while(leftSlot <= middleIndex)
             {
-                tempArray[count] = arr[leftStart];
-                leftStart++;
-                count++;
+                tempArray[counter] = arr[leftSlot];
+                counter++;
+                leftSlot++;
             }
         }
-        else if(rightStart <= endIndex)
+        else if(rightSlot <= endIndex)
         {
-            while (rightStart <= endIndex)
+            while (rightSlot <= endIndex)
             {
-                tempArray[count] = arr[rightStart];
-                rightStart++;
-                count++;
+                tempArray[counter] = arr[rightSlot];
+                counter++;
+                rightSlot++;
             }
         }
-        arr = tempArray;
+
+        for(int i = 0; i < tempArray.length; i++)
+        {
+            arr[startingIndex + i] = tempArray[i];
+        }
     }
 }

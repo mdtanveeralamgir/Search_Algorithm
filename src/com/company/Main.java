@@ -34,7 +34,7 @@ public class Main {
 		//Merge sorting
 		MergeSort ms = new MergeSort();
 		int arr[] = {1,3,2,5,4};
-		ms.mergeSorting(arr, 0, arr.length-1);
+		ms.mergeSorting(arr);
 		printArr(arr);
 
 

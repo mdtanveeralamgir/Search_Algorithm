@@ -32,12 +32,20 @@ public class Main {
 //		printArr(arr);
 //**************************************************************************
 		//Merge sorting
-		MergeSort ms = new MergeSort();
-		int arr[] = {1,3,2,5,4};
-		ms.mergeSorting(arr);
+//		MergeSort ms = new MergeSort();
+//		int arr[] = {1,3,2,5,4};
+//		ms.mergeSorting(arr);
+//		printArr(arr);
+//**************************************************************************
+//		Testing things
+//		Explore ex = new Explore();
+//		int arr[] = {1,2,3,4};
+//		ex.Recursion(arr, 0, arr.length - 1);
+//**************************************************************************
+		QuickSort qs = new QuickSort();
+		int arr[] = {1,3,2,2,5,4};
+		qs.quickSort(arr);
 		printArr(arr);
-
-
 	}
 
 

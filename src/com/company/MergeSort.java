@@ -1,12 +1,13 @@
 package com.company;
 
 public class MergeSort {
+
     public static void mergeSorting(int arr[]){
         mergeSorting(arr, 0, arr.length-1);
     }
+
     public static void mergeSorting(int arr[], int startingIndex, int endIndex)
     {
-//        int result[] = {};
             if(endIndex <= startingIndex)
                 return;
             int middle = (startingIndex + endIndex)/2;
